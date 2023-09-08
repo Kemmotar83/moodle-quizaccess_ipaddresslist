@@ -32,7 +32,7 @@ $string['managesubnets'] = 'Locations management';
 $string['pluginname'] = 'IP address list quiz access rule';
 $string['privacy:metadata'] = 'This plugin does not store any personal data.';
 $string['subnet'] = 'IP subnet';
-$string['subnetwrong'] = 'This quiz is only accessible from certain locations, and this computer is not on the allowed list.';
+$string['subnetwrong'] = 'This quiz is only accessible from certain locations, and this computer is not on the allowed list ({$a}).';
 $string['subnet_help'] = 'Specify comma-separated list of partial or full IP address numbers.
 
 Examples:

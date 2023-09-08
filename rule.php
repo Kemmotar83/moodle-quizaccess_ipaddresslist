@@ -70,7 +70,9 @@ class quizaccess_ipaddresslist extends quiz_access_rule_base {
                 return false;
             }
         }
-        return get_string('subnetwrong', 'quizaccess_ipaddresslist');
+        $subnets = $DB->get_records_select_menu('quizaccess_ipaddresslist_net', $select, $params, 'sortorder ASC, name ASC',
+            'id, name');
+        return get_string('subnetwrong', 'quizaccess_ipaddresslist', implode(', ', $subnets));
     }
 
     /**
