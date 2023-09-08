@@ -24,8 +24,6 @@
 
 namespace quizaccess_ipaddresslist\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Rule that blocks attempt to open same quiz attempt in other session
  *
@@ -43,7 +41,7 @@ class provider implements \core_privacy\local\metadata\null_provider {
      *
      * @return  string
      */
-    public static function _get_reason() {
+    public static function get_reason() : string {
         return 'privacy:metadata';
     }
 }
