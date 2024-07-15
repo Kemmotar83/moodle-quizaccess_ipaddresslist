@@ -24,6 +24,8 @@
 
 namespace quizaccess_ipaddresslist\privacy;
 
+// phpcs:disable PSR2.Methods.MethodDeclaration.Underscore
+
 /**
  * Rule that blocks attempt to open same quiz attempt in other session
  *
@@ -41,7 +43,7 @@ class provider implements \core_privacy\local\metadata\null_provider {
      *
      * @return  string
      */
-    public static function get_reason() : string {
+    public static function _get_reason() {
         return 'privacy:metadata';
     }
 }

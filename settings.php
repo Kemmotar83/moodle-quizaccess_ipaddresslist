@@ -24,14 +24,14 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-if ($ADMIN->fulltree) {
+if ($ADMIN->fulltree && $hassiteconfig) {
     $settings->add(new quizaccess_ipaddresslist_subnet_list_editor());
 
     $settings->add(new admin_setting_heading('quizaccess_ipaddresslist/heading',
             get_string('generalsettings', 'admin'), get_string('configintro', 'quiz')));
 
-    $choices = $DB->get_records_menu('quizaccess_ipaddresslist_net', array(), 'sortorder ASC, name ASC', 'id, name');
-    $defaultsetting = array('value' => array(), 'adv' => true);
+    $choices = $DB->get_records_menu('quizaccess_ipaddresslist_net', [], 'sortorder ASC, name ASC', 'id, name');
+    $defaultsetting = ['value' => [], 'adv' => true];
     $settings->add(new quizaccess_ipaddresslist_configmulticheckbox_with_advanced('quizaccess_ipaddresslist/defaultallowedsubnets',
             get_string('allowedsubnets', 'quizaccess_ipaddresslist'), '', $defaultsetting, $choices));
     unset($choices);
